@@ -291,7 +291,7 @@ const Index = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex justify-center md:justify-end"
+            className="relative flex justify-center md:justify-end md:sticky md:top-24 self-start"
           >
             <motion.div
               animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}

@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import { useRef, useEffect, useState } from "react";
 import {
   Mail, Phone, MapPin, Linkedin, Instagram, MessageCircle,
-  Code2, Briefcase, GraduationCap, Languages, Heart, Sparkles, ArrowRight, ArrowDown
+  Code2, Briefcase, GraduationCap, Languages, Heart, Sparkles, ArrowRight, ArrowDown, Download
 } from "lucide-react";
 import douniaPhoto from "@/assets/dounia.jpeg";
 
@@ -182,11 +182,20 @@ const Index = () => {
               </motion.a>
             ))}
           </nav>
-          <Magnetic>
-            <Button asChild size="sm" className="gradient-accent border-0 hover:opacity-90">
-              <a href="#contact">Me contacter</a>
-            </Button>
-          </Magnetic>
+          <div className="flex items-center gap-2">
+            <Magnetic>
+              <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+                <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
+                  <Download className="w-4 h-4 mr-1.5" /> CV
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button asChild size="sm" className="gradient-accent border-0 hover:opacity-90">
+                <a href="#contact">Me contacter</a>
+              </Button>
+            </Magnetic>
+          </div>
         </div>
       </motion.header>
 
@@ -263,6 +272,13 @@ const Index = () => {
                 <Button asChild size="lg" variant="outline" className="bg-white/5 border-white/30 text-white hover:bg-white/15 backdrop-blur">
                   <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
                     <Instagram className="w-4 h-4 mr-2" /> Instagram
+                  </a>
+                </Button>
+              </Magnetic>
+              <Magnetic>
+                <Button asChild size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-white/90">
+                  <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
+                    <Download className="w-4 h-4 mr-2" /> Télécharger CV
                   </a>
                 </Button>
               </Magnetic>
@@ -379,24 +395,20 @@ const Index = () => {
             </div>
           </Reveal>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {skills.map((s, i) => {
-              const ref = useRef(null);
-              const inView = useInView(ref, { once: true });
-              return (
-                <motion.div
-                  key={s}
-                  ref={ref}
-                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                  animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.04, type: "spring", stiffness: 200, damping: 15 }}
-                  whileHover={{ scale: 1.1, y: -4 }}
-                >
-                  <Badge className="px-4 py-2 text-sm bg-card text-foreground border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth cursor-default">
-                    {s}
-                  </Badge>
-                </motion.div>
-              );
-            })}
+            {skills.map((s, i) => (
+              <motion.div
+                key={s}
+                initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.04, type: "spring", stiffness: 200, damping: 15 }}
+                whileHover={{ scale: 1.1, y: -4 }}
+              >
+                <Badge className="px-4 py-2 text-sm bg-card text-foreground border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth cursor-default">
+                  {s}
+                </Badge>
+              </motion.div>
+            ))}
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-16">

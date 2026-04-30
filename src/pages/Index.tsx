@@ -379,24 +379,20 @@ const Index = () => {
             </div>
           </Reveal>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
-            {skills.map((s, i) => {
-              const ref = useRef(null);
-              const inView = useInView(ref, { once: true });
-              return (
-                <motion.div
-                  key={s}
-                  ref={ref}
-                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                  animate={inView ? { opacity: 1, scale: 1, y: 0 } : {}}
-                  transition={{ delay: i * 0.04, type: "spring", stiffness: 200, damping: 15 }}
-                  whileHover={{ scale: 1.1, y: -4 }}
-                >
-                  <Badge className="px-4 py-2 text-sm bg-card text-foreground border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth cursor-default">
-                    {s}
-                  </Badge>
-                </motion.div>
-              );
-            })}
+            {skills.map((s, i) => (
+              <motion.div
+                key={s}
+                initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ delay: i * 0.04, type: "spring", stiffness: 200, damping: 15 }}
+                whileHover={{ scale: 1.1, y: -4 }}
+              >
+                <Badge className="px-4 py-2 text-sm bg-card text-foreground border border-border hover:bg-accent hover:text-accent-foreground hover:border-accent transition-smooth cursor-default">
+                  {s}
+                </Badge>
+              </motion.div>
+            ))}
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 mt-16">

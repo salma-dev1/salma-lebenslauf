@@ -118,7 +118,8 @@ const Index = () => {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 800], [0, 200]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-  const photoY = useTransform(scrollY, [0, 800], [0, -100]);
+  const rawPhotoY = useTransform(scrollY, [0, 800], [0, -40]);
+  const photoY = useSpring(rawPhotoY, { stiffness: 60, damping: 20 });
 
   // Scroll progress bar
   const { scrollYProgress } = useScroll();

@@ -275,6 +275,13 @@ const Index = () => {
                   </a>
                 </Button>
               </Magnetic>
+              <Magnetic>
+                <Button asChild size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-white/90">
+                  <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
+                    <Download className="w-4 h-4 mr-2" /> Télécharger CV
+                  </a>
+                </Button>
+              </Magnetic>
             </motion.div>
           </div>
 

@@ -118,7 +118,8 @@ const Index = () => {
   const { scrollY } = useScroll();
   const heroY = useTransform(scrollY, [0, 800], [0, 200]);
   const heroOpacity = useTransform(scrollY, [0, 500], [1, 0]);
-  const photoY = useTransform(scrollY, [0, 800], [0, -100]);
+  const rawPhotoY = useTransform(scrollY, [0, 800], [0, -40]);
+  const photoY = useSpring(rawPhotoY, { stiffness: 60, damping: 20 });
 
   // Scroll progress bar
   const { scrollYProgress } = useScroll();
@@ -286,6 +287,7 @@ const Index = () => {
           </div>
 
           <motion.div
+            style={{ y: photoY }}
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}

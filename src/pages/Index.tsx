@@ -5,7 +5,7 @@ import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence 
 import { useRef, useEffect, useState } from "react";
 import {
   Mail, Phone, MapPin, Linkedin, Instagram, MessageCircle,
-  Code2, Briefcase, GraduationCap, Languages, Heart, Sparkles, ArrowRight, ArrowDown
+  Code2, Briefcase, GraduationCap, Languages, Heart, Sparkles, ArrowRight, ArrowDown, Download
 } from "lucide-react";
 import douniaPhoto from "@/assets/dounia.jpeg";
 

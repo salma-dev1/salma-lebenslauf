@@ -182,11 +182,20 @@ const Index = () => {
               </motion.a>
             ))}
           </nav>
-          <Magnetic>
-            <Button asChild size="sm" className="gradient-accent border-0 hover:opacity-90">
-              <a href="#contact">Me contacter</a>
-            </Button>
-          </Magnetic>
+          <div className="flex items-center gap-2">
+            <Magnetic>
+              <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
+                <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
+                  <Download className="w-4 h-4 mr-1.5" /> CV
+                </a>
+              </Button>
+            </Magnetic>
+            <Magnetic>
+              <Button asChild size="sm" className="gradient-accent border-0 hover:opacity-90">
+                <a href="#contact">Me contacter</a>
+              </Button>
+            </Magnetic>
+          </div>
         </div>
       </motion.header>
 

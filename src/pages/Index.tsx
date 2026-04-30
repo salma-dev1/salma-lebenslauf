@@ -287,6 +287,7 @@ const Index = () => {
           </div>
 
           <motion.div
+            style={{ y: photoY }}
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}

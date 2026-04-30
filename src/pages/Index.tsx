@@ -219,7 +219,7 @@ const Index = () => {
           backgroundSize: "40px 40px"
         }} />
 
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="container relative grid md:grid-cols-2 gap-12 items-center">
+        <motion.div style={{ opacity: heroOpacity }} className="container relative grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <Badge className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur">
@@ -291,7 +291,7 @@ const Index = () => {
             initial={{ opacity: 0, scale: 0.8, rotate: -10 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-            className="relative flex justify-center md:justify-end"
+            className="relative flex justify-center md:justify-end md:sticky md:top-24 self-start"
           >
             <motion.div
               animate={{ scale: [1, 1.1, 1], rotate: [0, 90, 0] }}

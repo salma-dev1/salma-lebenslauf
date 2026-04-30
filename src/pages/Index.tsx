@@ -219,7 +219,7 @@ const Index = () => {
           backgroundSize: "40px 40px"
         }} />
 
-        <motion.div style={{ y: heroY, opacity: heroOpacity }} className="container relative grid md:grid-cols-2 gap-12 items-center">
+        <motion.div style={{ opacity: heroOpacity }} className="container relative grid md:grid-cols-2 gap-12 items-start">
           <div className="space-y-6">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}>
               <Badge className="bg-white/10 text-white border-white/20 hover:bg-white/20 backdrop-blur">

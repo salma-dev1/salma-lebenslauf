@@ -4,54 +4,61 @@ import { Badge } from "@/components/ui/badge";
 import { motion, useScroll, useTransform, useSpring, useInView, AnimatePresence } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import {
-  Mail, Phone, MapPin, Linkedin, Instagram, MessageCircle,
-  Code2, Briefcase, GraduationCap, Languages, Heart, Sparkles, ArrowRight, ArrowDown, Download
+  Mail, Phone, MapPin, Github, Instagram, MessageCircle,
+  Code2, Briefcase, GraduationCap, Languages, Heart,
+  Sparkles, ArrowRight, ArrowDown, Download
 } from "lucide-react";
-import douniaPhoto from "@/assets/dounia.jpeg";
+import salmaPhoto from "./../assets/salma.jpg";
 
-const WHATSAPP = "https://wa.me/212783009908";
-const LINKEDIN = "https://www.linkedin.com/in/sakkak-dounia-a6124a405";
-const INSTAGRAM = "https://www.instagram.com/imdidouou";
-const EMAIL = "mailto:jawadounia02@gmail.com";
+const GITHUB_URL = "https://github.com/salma-dev1";
+const INSTAGRAM_URL = "https://www.instagram.com/salma.skk1";
+const EMAIL = "mailto:salmasakkak2@gmail.com";
+const WHATSAPP = "https://wa.me/212712041195";
 
 const skills = [
-  "HTML", "CSS", "Java", "Python", "C++", "C", "MySQL",
-  "Firebase", "GitHub", "WordPress", "Canva",
-  "Google Search Console", "Mailchimp", "Emailing"
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "PHP",
+  "Python",
+  "Java",
+  "C",
+  "UML",
+  "MySQL",
+  "GitHub",
+  "AWS S3",
+  "Software Engineering",
+  "Webentwicklung",
+  "Microsoft Office",
+  "Debugging"
 ];
 
 const formations = [
-  { title: "Technicien spécialisé en développement informatique", school: "EURELEC", years: "2023 — 2025" },
-  { title: "Formation certifiée en Marketing Digital", school: "Digital Minds Academique", years: "2023 — 2024" },
-  { title: "Baccalauréat en économie (GC)", school: "Lycée ALBAIDA", years: "2022 — 2023" },
-  { title: "Technicien spécialisé en Gestion des entreprises — Commerce & Marketing", school: "ISGI", years: "En cours" },
+  {
+    title: "Informatikstudium",
+    school: "EMSI Casablanca",
+    years: "2020 — 2023"
+  },
+  {
+    title: "Abitur – Physikwissenschaften",
+    school: "Gymnasium Al Baida, Casablanca",
+    years: "07/2020"
+  }
 ];
 
 const experiences = [
   {
-    role: "Responsable Marketing Digital",
-    place: "Casablanca (Technopark)",
-    years: "2024 — 2025",
-    points: ["Gérer les médias sociaux (création de posts LinkedIn, mise en avant des services)", "Envoyer des mails professionnels personnalisés"],
-  },
-  {
-    role: "Stage Développeuse Web",
-    place: "Casablanca — Centre TPE Solidaire",
-    years: "2023 — 2024",
-    points: ["Développement de site web pour la société", "Création de plateformes", "Gestion des réseaux sociaux"],
-  },
-  {
-    role: "Commerciale — Banques participatives",
-    place: "Casablanca (Abdelmoumen)",
-    years: "2023 — 2024",
-    points: ["Chargée de la clientèle", "Appels téléphoniques (questions + rendez-vous)"],
-  },
-  {
-    role: "Téléconseillère francophone",
-    place: "Casablanca (Maarif — Sidi Maarouf)",
-    years: "2022 — 2024",
-    points: ["Téléconseil énergies renouvelables", "Téléconseil assurance santé"],
-  },
+    role: "Praktikum – Webentwicklung",
+    place: "FORMAT PRINT, Casablanca",
+    years: "10/2025 — 12/2025",
+    points: [
+      "Entwicklung einer Webanwendung (CARE4U Website)",
+      "Analyse von Anforderungen und technischen Spezifikationen",
+      "Frontend- und Backend-Entwicklung (HTML, CSS, JavaScript, PHP, Python, Java)",
+      "Fehlerbehebung und Performance-Optimierung",
+      "Teamarbeit in einem agilen Entwicklungsumfeld"
+    ]
+  }
 ];
 
 // Reveal wrapper
@@ -168,10 +175,10 @@ const Index = () => {
       >
         <div className="container flex items-center justify-between py-4">
           <a href="#top" className="font-serif text-xl font-bold tracking-tight">
-            Dounia<span className="text-gradient">.</span>
+            Salma<span className="text-gradient">.</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            {["À propos", "Compétences", "Expérience", "Contact"].map((item, i) => (
+            {["Profil", "Fähigkeiten", "Erfahrung", "Kontakt"].map((item, i) => (
               <motion.a
                 key={item}
                 href={`#${["about", "skills", "experience", "contact"][i]}`}
@@ -186,14 +193,14 @@ const Index = () => {
           <div className="flex items-center gap-2">
             <Magnetic>
               <Button asChild size="sm" variant="outline" className="hidden sm:inline-flex">
-                <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
-                  <Download className="w-4 h-4 mr-1.5" /> CV
+               <a href="/lebenslauf-salma-sakkak.pdf" download="Lebenslauf-salma-sakkak.pdf">
+               <Download className="w-4 h-4 mr-1.5" /> Lebenslauf
                 </a>
               </Button>
             </Magnetic>
             <Magnetic>
               <Button asChild size="sm" className="gradient-accent border-0 hover:opacity-90">
-                <a href="#contact">Me contacter</a>
+                <a href="#contact">Kontaktieren Sie mich</a>
               </Button>
             </Magnetic>
           </div>
@@ -226,12 +233,12 @@ const Index = () => {
                 <motion.span animate={{ rotate: [0, 20, -20, 0] }} transition={{ duration: 2, repeat: Infinity }}>
                   <Sparkles className="w-3 h-3 mr-1 inline" />
                 </motion.span>
-                Disponible pour de nouveaux projets
+                Offen für Ausbildungs- und Praktikumsmöglichkeiten
               </Badge>
             </motion.div>
 
             <h1 className="text-5xl md:text-7xl font-bold leading-[1.1]">
-              <AnimatedWords text="Dounia" />
+              <AnimatedWords text="Salma" />
               <br />
               <span className="text-gradient bg-[length:200%_auto] animate-gradient-shift inline-block" style={{ backgroundImage: "linear-gradient(90deg, hsl(25 80% 60%), hsl(35 85% 65%), hsl(25 80% 60%))", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent" }}>
                 <AnimatedWords text="Sakkak" />
@@ -242,13 +249,13 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
               className="text-xl md:text-2xl text-white/80 font-light"
             >
-              Développeuse Full-Stack & Marketing Digital
+              Fachinformatikerin für Anwendungsentwicklung
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
               className="text-white/70 max-w-lg leading-relaxed"
             >
-              Passionnée par la création de solutions innovantes et fonctionnelles, le développement de logiciels et les technologies émergentes.
+              Motivierte Informatikstudentin mit soliden Kenntnissen in Webentwicklung und Software Engineering. Praktische Erfahrung in der Entwicklung von Webanwendungen sowie Kenntnisse in mehreren Programmiersprachen.
             </motion.p>
 
             <motion.div
@@ -264,22 +271,27 @@ const Index = () => {
               </Magnetic>
               <Magnetic>
                 <Button asChild size="lg" variant="outline" className="bg-white/5 border-white/30 text-white hover:bg-white/15 backdrop-blur">
-                  <a href={LINKEDIN} target="_blank" rel="noopener noreferrer">
-                    <Linkedin className="w-4 h-4 mr-2" /> LinkedIn
+                  <a href={GITHUB_URL} target="_blank" rel="noopener noreferrer">
+                    <Github className="w-4 h-4 mr-2" /> GitHub
                   </a>
                 </Button>
               </Magnetic>
               <Magnetic>
                 <Button asChild size="lg" variant="outline" className="bg-white/5 border-white/30 text-white hover:bg-white/15 backdrop-blur">
-                  <a href={INSTAGRAM} target="_blank" rel="noopener noreferrer">
+                  <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer">
                     <Instagram className="w-4 h-4 mr-2" /> Instagram
                   </a>
                 </Button>
               </Magnetic>
               <Magnetic>
-                <Button asChild size="lg" variant="outline" className="bg-white text-primary border-white hover:bg-white/90">
-                  <a href="/CV-Dounia-Sakkak.pdf" download="CV-Dounia-Sakkak.pdf">
-                    <Download className="w-4 h-4 mr-2" /> Télécharger CV
+                <Button
+                  asChild
+                  size="lg"
+                  variant="outline"
+                  className="bg-white text-primary border-white hover:bg-white/90"
+                >
+                  <a href="/lebenslauf-salma-sakkak.pdf" download="Lebenslauf-Salma-Sakkak.pdf">
+                    <Download className="w-4 h-4 mr-2" /> Lebenslauf herunterladen
                   </a>
                 </Button>
               </Magnetic>
@@ -307,8 +319,8 @@ const Index = () => {
               <motion.img
                 whileHover={{ scale: 1.03, rotate: -2 }}
                 transition={{ type: "spring", stiffness: 200, damping: 15 }}
-                src={douniaPhoto}
-                alt="Portrait de Dounia Sakkak"
+                src={salmaPhoto}
+                alt="Portrait von Salma Sakkak"
                 className="relative w-72 h-96 md:w-80 md:h-[28rem] object-cover rounded-[2rem] shadow-elegant border-4 border-white/20"
               />
               {/* Floating tags */}
@@ -324,7 +336,7 @@ const Index = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -right-6 bottom-20 bg-white/95 backdrop-blur text-foreground px-4 py-2 rounded-2xl shadow-elegant text-sm font-semibold flex items-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-accent" /> Marketing
+                <Sparkles className="w-4 h-4 text-accent" /> Anwendungsentwicklung
               </motion.div>
             </div>
           </motion.div>
@@ -347,7 +359,7 @@ const Index = () => {
         <div className="flex animate-marquee whitespace-nowrap">
           {[...Array(2)].map((_, k) => (
             <div key={k} className="flex items-center gap-12 px-6">
-              {["Développement Web", "Marketing Digital", "Full-Stack", "Casablanca", "Créative", "Responsable", "Design", "WordPress", "React"].map((w, i) => (
+              {["Webentwicklung", "Softwareentwicklung", "Full-Stack-Entwicklung", "Frontend-Entwicklung", "Backend-Entwicklung", "Datenbanken (MySQL)", "Programmiersprachen (Java, PHP, Python, JavaScript)", "UML-Modellierung", "Git / GitHub", "React" ].map((w, i) => (
                 <span key={i} className="flex items-center gap-12 text-2xl font-serif font-bold">
                   {w}
                   <span className="text-accent">✦</span>
@@ -362,9 +374,9 @@ const Index = () => {
       <section id="about" className="py-20">
         <div className="container grid md:grid-cols-3 gap-8">
           {[
-            { icon: Phone, title: "Téléphone", text: "+212 7 83 00 99 08" },
-            { icon: Mail, title: "Email", text: "jawadounia02@gmail.com" },
-            { icon: MapPin, title: "Localisation", text: "Hay Elwalae — Casablanca" },
+            { icon: Phone, title: "Telefon", text: "+212 712 041 195" },
+            { icon: Mail, title: "E-Mail", text: "salmasakkak2@gmail.com" },
+            { icon: MapPin, title: "Standort", text: "Casablanca, Marokko" },
           ].map((item, i) => (
             <Reveal key={i} delay={i * 0.15}>
               <motion.div whileHover={{ y: -8 }} transition={{ type: "spring", stiffness: 300 }}>
@@ -391,8 +403,8 @@ const Index = () => {
         <div className="container relative">
           <Reveal>
             <div className="text-center mb-12">
-              <Badge variant="outline" className="mb-3"><Code2 className="w-3 h-3 mr-1" /> Stack technique</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold">Compétences <span className="text-gradient">Techniques</span></h2>
+              <Badge variant="outline" className="mb-3"><Code2 className="w-3 h-3 mr-1" /> Technische Fähigkeiten</Badge>
+              <h2 className="text-4xl md:text-5xl font-bold">Technische Fähigkeiten <span className="text-gradient">Techniques</span></h2>
             </div>
           </Reveal>
           <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
@@ -414,9 +426,9 @@ const Index = () => {
 
           <div className="grid md:grid-cols-3 gap-6 mt-16">
             {[
-              { icon: Languages, title: "Langues", items: ["Arabe — Courant", "Français — Courant", "Anglais — Courant"] },
-              { icon: Heart, title: "Loisirs", items: ["Gaming", "Impression", "Infographie"] },
-              { icon: Sparkles, title: "Qualités", items: ["Créative", "Responsable", "Active"] },
+              { icon: Languages, title: "Sprachen", items: ["Arabisch — Muttersprache", "Französisch — Sehr gut", "Englisch — Gut", "Deutsch — B1 (B2 in Vorbereitung)"] },
+              { icon: Heart, title: "Interessen", items: ["Webentwicklung", "Neue Technologien", "Reisen", "Sport"] },
+              { icon: Sparkles, title: "Eigenschaften", items: ["Motiviert", "Lernbereit", "Teamfähig"] },
             ].map((g, i) => (
               <Reveal key={i} delay={i * 0.15}>
                 <motion.div whileHover={{ y: -8, rotateY: 5 }} transition={{ type: "spring", stiffness: 300 }} style={{ transformPerspective: 1000 }}>
@@ -435,14 +447,52 @@ const Index = () => {
           </div>
         </div>
       </section>
+      {/* ZERTIFIKATE */}
+<section id="zertifikate" className="py-20 bg-secondary/40">
+  <div className="container max-w-5xl">
+
+    <div className="text-center mb-12">
+      <Badge variant="outline" className="mb-3">
+        <Code2 className="w-3 h-3 mr-1" /> Zertifikate
+      </Badge>
+      <h2 className="text-4xl md:text-5xl font-bold">
+        IT- und <span className="text-gradient">Zertifikate</span>
+      </h2>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-6">
+
+      <Card className="p-6 border-0 shadow-soft gradient-card">
+        <h3 className="text-xl font-bold mb-3">Coursera & Online Kurse</h3>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li>Programming for Everybody (Python)</li>
+          <li>Software Engineering & UML</li>
+          <li>AWS S3 Basics</li>
+          <li>Arduino & C Programming</li>
+        </ul>
+      </Card>
+
+      <Card className="p-6 border-0 shadow-soft gradient-card">
+        <h3 className="text-xl font-bold mb-3">IT & Web Entwicklung</h3>
+        <ul className="space-y-2 text-sm text-muted-foreground">
+          <li>HTML, CSS, JavaScript, PHP</li>
+          <li>GitHub & Version Control</li>
+          <li>Microsoft Office</li>
+          <li>Web Projects</li>
+        </ul>
+      </Card>
+
+    </div>
+  </div>
+</section>
 
       {/* EXPERIENCE */}
       <section id="experience" className="py-20">
         <div className="container max-w-5xl">
           <Reveal>
             <div className="text-center mb-12">
-              <Badge variant="outline" className="mb-3"><Briefcase className="w-3 h-3 mr-1" /> Parcours pro</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold">Expérience <span className="text-gradient">Professionnelle</span></h2>
+              <Badge variant="outline" className="mb-3"><Briefcase className="w-3 h-3 mr-1" /> Beruflicher Werdegang </Badge>
+              <h2 className="text-4xl md:text-5xl font-bold"> Berufserfahrung <span className="text-gradient">im Überblick</span></h2>
             </div>
           </Reveal>
           <div className="relative space-y-6">
@@ -504,8 +554,8 @@ const Index = () => {
         <div className="container max-w-5xl">
           <Reveal>
             <div className="text-center mb-12">
-              <Badge variant="outline" className="mb-3"><GraduationCap className="w-3 h-3 mr-1" /> Études</Badge>
-              <h2 className="text-4xl md:text-5xl font-bold">Formation <span className="text-gradient">Académique</span></h2>
+              <Badge variant="outline" className="mb-3"><GraduationCap className="w-3 h-3 mr-1" /> Ausbildung</Badge>
+              <h2 className="text-4xl md:text-5xl font-bold">Akademischer <span className="text-gradient">Werdegang</span></h2>
             </div>
           </Reveal>
           <div className="grid md:grid-cols-2 gap-6">
@@ -541,16 +591,16 @@ const Index = () => {
               />
               <div className="relative">
                 <h2 className="text-4xl md:text-5xl font-bold mb-4">
-                  Travaillons <span className="text-gradient">ensemble</span>
+                   Offen für <span className="text-gradient">neue Möglichkeiten</span>
                 </h2>
                 <p className="text-white/80 mb-8 max-w-xl mx-auto">
-                  Un projet, une idée, une opportunité ? N'hésitez pas à me contacter sur la plateforme de votre choix.
+                   Ich freue mich über spannende Projekte, Praktika sowie Ausbildungs- und Karrieremöglichkeiten im Bereich Informatik. Kontaktieren Sie mich gerne.
                 </p>
                 <div className="flex flex-wrap justify-center gap-3">
                   {[
                     { href: WHATSAPP, icon: MessageCircle, label: "WhatsApp", primary: true },
-                    { href: LINKEDIN, icon: Linkedin, label: "LinkedIn" },
-                    { href: INSTAGRAM, icon: Instagram, label: "Instagram" },
+                    { href: GITHUB_URL, icon: Github, label: "GitHub" },
+                    { href: INSTAGRAM_URL, icon: Instagram, label: "Instagram" },
                     { href: EMAIL, icon: Mail, label: "Email" },
                   ].map((b) => (
                     <Magnetic key={b.label}>
@@ -571,12 +621,12 @@ const Index = () => {
       {/* FOOTER */}
       <footer className="py-8 border-t border-border">
         <div className="container flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>© 2026 Dounia Sakkak. Tous droits réservés.</p>
+          <p>© 2026 Salma Sakkak. Alle Rechte vorbehalten</p>
           <div className="flex gap-4">
             {[
               { href: WHATSAPP, icon: MessageCircle },
-              { href: LINKEDIN, icon: Linkedin },
-              { href: INSTAGRAM, icon: Instagram },
+              { href: GITHUB_URL, icon: Github },
+              { href: INSTAGRAM_URL, icon: Instagram },
               { href: EMAIL, icon: Mail },
             ].map((s, i) => (
               <motion.a

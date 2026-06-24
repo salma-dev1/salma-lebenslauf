@@ -249,14 +249,13 @@ const Index = () => {
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}
               className="text-xl md:text-2xl text-white/80 font-light"
             >
-              Fachinformatikerin für Anwendungsentwicklung
+              Fachinformatikerin für Systemintegration
             </motion.p>
             <motion.p
               initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 1 }}
               className="text-white/70 max-w-lg leading-relaxed"
             >
-              Motivierte Informatikstudentin mit soliden Kenntnissen in Webentwicklung und Software Engineering. Praktische Erfahrung in der Entwicklung von Webanwendungen sowie Kenntnisse in mehreren Programmiersprachen.
-            </motion.p>
+              Motivierte Informatikstudentin mit soliden Kenntnissen in Webentwicklung und Software Engineering. Praktische Erfahrung in der Entwicklung von Webanwendungen sowie Kenntnisse in mehreren Programmiersprachen.            </motion.p>
 
             <motion.div
               initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.2 }}
@@ -336,7 +335,7 @@ const Index = () => {
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute -right-6 bottom-20 bg-white/95 backdrop-blur text-foreground px-4 py-2 rounded-2xl shadow-elegant text-sm font-semibold flex items-center gap-2"
               >
-                <Sparkles className="w-4 h-4 text-accent" /> Anwendungsentwicklung
+                <Sparkles className="w-4 h-4 text-accent" />  Systemintegration
               </motion.div>
             </div>
           </motion.div>
